@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="railsformers" translate="label" sortOrder="900">
+            <label>Railsformers</label>
+        </tab>
+        <section id="railsformers_ecar_import" showInDefault="1">
+            <tab>railsformers</tab>
+            <label>Ecar Import</label>
+            <resource>Railsformers_EcarImport::config</resource>
+            <group id="import_settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Vynucení importu</label>
+                <field id="force_import" translate="label" type="select" sortOrder="10" showInDefault="1">
+                    <label>Vynutit další import ?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="file_upload" translate="label" type="file" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+
+                <label>Nahrání souboru</label>
+                <field id="upload_field_data0" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Nahrát soubor data0.ecar</label>
+                    <backend_model>Railsformers\EcarImport\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">ecar_import</upload_dir>
+                    <base_url type="media" scope_info="1">ecar_import</base_url>
+                    <can_delete>1</can_delete>
+                </field>
+
+                <field id="upload_field_data1" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Nahrát soubor data1w.ecar</label>
+                    <backend_model>Railsformers\EcarImport\Model\Config\Backend\File</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">ecar_import</upload_dir>
+                    <base_url type="media" scope_info="1">ecar_import</base_url>
+                    <can_delete>1</can_delete>
+                </field>
+
+            </group>
+            <group id="rates" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+                <label>Rates</label>
+                <field id="rate_default" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Základní koef. PLN - CZK</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_stahovacky_oken" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Stahovačky oken</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_rozvodove_sady_remeny" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Rozvodové sady + řemeny</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_mlhove_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední mlhové světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_autokosmetika" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Autokosmetika</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_vodni_pumpy" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Vodní pumpy</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_cepy_tyce_rizeni" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Čepy a tyče řízení</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_tyce_stabilizatoru" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Tyče stabilizátoru</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_spojkove_sady" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Spojkové sady</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_tlumice_perovani" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Tlumiče pérování</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_ventilatory_sahary" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Ventilátory a sahary</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_masky" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední masky</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_chladice_vzduchu_intercooler" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Chladiče vzduchu Intercooler</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_narazniky_vyztuhy" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední nárazníky a výztuhy</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_zadni_narazniky_vyztuhy" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Zadní nárazníky a výztuhy</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_blatniky" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední blatníky</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_kapoty" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední kapoty</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_cela" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední čela</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_chladice_klimatizace" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Chladiče klimatizace</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_chladice_vody" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Chladiče vody</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_mlhova_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední mlhová světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_ramena_jejich_casti" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Ramena a jejich části</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_zpetna_zrcatka" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Zpětná zrcátka</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_predni_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Přední světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="rate_zadni_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Zadní světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="sales" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label">
+                <label>Sleva</label>
+                <field id="sale_stahovacky_oken" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Stahovačky oken</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_rozvodove_sady_remeny" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Rozvodové sady + řemeny</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_mlhove_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední mlhové světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_autokosmetika" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Autokosmetika</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_vodni_pumpy" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Vodní pumpy</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_cepy_tyce_rizeni" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Čepy a tyče řízení</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_tyce_stabilizatoru" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Tyče stabilizátoru</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_spojkove_sady" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Spojkové sady</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_tlumice_perovani" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Tlumiče pérování</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_ventilatory_sahary" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Ventilátory a sahary</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_masky" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední masky</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_chladice_vzduchu_intercooler" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Chladiče vzduchu Intercooler</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_narazniky_vyztuhy" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední nárazníky a výztuhy</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_zadni_narazniky_vyztuhy" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Zadní nárazníky a výztuhy</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_blatniky" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední blatníky</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_kapoty" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední kapoty</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_cela" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední čela</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_chladice_klimatizace" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Chladiče klimatizace</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_chladice_vody" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Chladiče vody</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_mlhova_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední mlhová světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_ramena_jejich_casti" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Ramena a jejich části</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_zpetna_zrcatka" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Zpětná zrcátka</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_predni_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Přední světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="sale_zadni_svetla" translate="label" type="text" sortOrder="30" showInDefault="1" canRestore="1">
+                    <label>Sleva % Zadní světla</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
